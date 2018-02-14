@@ -3,7 +3,14 @@ import App from './App';
 
 import renderer from 'react-test-renderer';
 
-it('renders without crashing', () => {
-  const rendered = renderer.create(<App />).toJSON();
-  expect(rendered).toBeTruthy();
-});
+describe('App', () => {
+  let app
+
+  beforeEach(() => {
+    rendered = renderer.create(<App />)
+  })
+
+  it('renders correctly', () => {
+    expect(rendered).toMatchSnapshot()
+  })
+})
