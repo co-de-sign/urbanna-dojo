@@ -1,5 +1,7 @@
+import { AsyncStorage } from 'react-native'
+
 export default class Beer {
-  static names = [
+  static NAMES = [
     'ninteennintynine',
     'badenbadenstout',
     'bambergrauchbier',
@@ -12,8 +14,17 @@ export default class Beer {
     'brahma',
   ]
 
-  static all() {
-    return Promise.all(Beer.names.map(name =>
+  static KEY = '@UrbannaBeer:beers'
+
+  static async all() {
+    const beers = await AsyncStorage.getItem(Beer.KEY)
+
+    // if 'cached', return cache
+    if (beers) {
+      return Promise.resolve(beers)
+    }
+
+    const fetchedBeers = await Promise.all(Beer.NAMES.map(name =>
       fetch(`http://prost.herokuapp.com/api/v1/beer/${name}`, {
         headers: {
           'Accept': 'application/json',
@@ -22,5 +33,9 @@ export default class Beer {
       })
       .then(result => result.json())
     ))
+
+    AsyncStorage.setItem(Beer.KEY, fetchedBeers)
+
+    return fetchedBeers
   }
 }

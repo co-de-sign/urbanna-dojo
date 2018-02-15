@@ -1,3 +1,8 @@
+import MockAsyncStorage from '../../helpers/MockAsyncStorage'
+
+const mockStorage = new MockAsyncStorage()
+jest.setMock('AsyncStorage', mockStorage)
+
 import Beer from '.'
 
 describe('Beer', () => {
@@ -9,8 +14,15 @@ describe('Beer', () => {
 
     beforeAll(() => {
       global.fetch = require('jest-fetch-mock')
+    })
 
+    beforeEach(() => {
       fetch.mockResponse(JSON.stringify(beerSample))
+    })
+
+    afterEach(() => {
+      fetch.resetMocks()
+      mockStorage.clear()
     })
 
     it('returns all beers', async () => {
@@ -23,6 +35,16 @@ describe('Beer', () => {
       const allBeers = await Beer.all()
 
       expect(allBeers[0]).toEqual(beerSample)
+    })
+
+    it('caches the beers after first call', async () => {
+      let allBeers = await Beer.all()
+
+      expect(fetch).toHaveBeenCalledTimes(10)
+
+      allBeers = await Beer.all()
+
+      expect(fetch).toHaveBeenCalledTimes(10)
     })
   })
 })
