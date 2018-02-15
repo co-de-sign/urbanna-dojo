@@ -8,8 +8,9 @@ import Beer from '.'
 describe('Beer', () => {
   describe('#all', () => {
     const beerSample = {
-      name: 'fake',
-      alcohol: 1,
+      key: Beer.KEYS[0],
+      title: 'fake',
+      abv: 1,
     }
 
     beforeAll(() => {
@@ -34,7 +35,11 @@ describe('Beer', () => {
     it('returns the beer instance', async () => {
       const allBeers = await Beer.all()
 
-      expect(allBeers[0]).toEqual(beerSample)
+      expect(allBeers[0]).toEqual({
+        key: beerSample.key,
+        name: beerSample.title,
+        alcohol: beerSample.abv,
+      })
     })
 
     it('caches the beers after first call', async () => {

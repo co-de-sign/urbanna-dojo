@@ -33,5 +33,6 @@ exports[`App renders correctly 1`] = `
       Urbanna
     </Text>
   </View>
+  <View />
 </View>
 `;
