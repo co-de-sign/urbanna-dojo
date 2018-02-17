@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 
+import card from '../../helpers/card'
+
 export default class BeerBox extends Component {
   render() {
     const { data } = this.props
@@ -21,11 +23,7 @@ export default class BeerBox extends Component {
 
 const styles = StyleSheet.create({
   box: {
-    marginTop: 32,
-    padding: 24,
-    height: 224,
-    width: 256,
-    elevation: 1,
+    ...card,
     backgroundColor: '#fff',
   },
   title: {

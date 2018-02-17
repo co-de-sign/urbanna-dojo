@@ -12,7 +12,7 @@ export default class Header extends Component {
           barStyle="light-content"
         />
         <Text style={styles.banner}>
-          Urbanna
+          Urbanna Beer
         </Text>
       </View>
     )

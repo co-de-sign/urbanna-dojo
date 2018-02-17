@@ -34,7 +34,7 @@ export default class Beer {
         },
       })
       .then(result => result.json())
-      .then(({ title, key, abv, tags }) => ({
+      .then(({ title, key, abv, tags = [] }) => ({
         key,
         type: tags,
         name: title,

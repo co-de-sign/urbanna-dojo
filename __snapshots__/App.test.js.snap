@@ -31,7 +31,7 @@ exports[`App renders correctly 1`] = `
         }
       }
     >
-      Urbanna
+      Urbanna Beer
     </Text>
   </View>
   <RCTScrollView
@@ -42,7 +42,20 @@ exports[`App renders correctly 1`] = `
       }
     }
   >
-    <View />
+    <View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#385B79",
+            "elevation": 1,
+            "marginTop": 32,
+            "minHeight": 224,
+            "padding": 24,
+            "width": 256,
+          }
+        }
+      />
+    </View>
   </RCTScrollView>
 </View>
 `;

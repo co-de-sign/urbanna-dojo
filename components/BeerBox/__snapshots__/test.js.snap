@@ -6,8 +6,8 @@ exports[`BeerBox renders correctly 1`] = `
     Object {
       "backgroundColor": "#fff",
       "elevation": 1,
-      "height": 224,
       "marginTop": 32,
+      "minHeight": 224,
       "padding": 24,
       "width": 256,
     }

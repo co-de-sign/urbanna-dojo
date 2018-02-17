@@ -11,6 +11,7 @@ describe('Beer', () => {
       key: Beer.KEYS[0],
       title: 'fake',
       abv: 1,
+      type: ['type'],
     }
 
     beforeAll(() => {
@@ -39,6 +40,7 @@ describe('Beer', () => {
         key: beerSample.key,
         name: beerSample.title,
         alcohol: beerSample.abv,
+        type: [],
       })
     })
 
