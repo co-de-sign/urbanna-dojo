@@ -1,0 +1,21 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
+
+import BeerBox from '.'
+
+describe('BeerBox', () => {
+  let box
+
+  beforeEach(() => {
+    const boxData = {
+      name: 'Fake name',
+      alcohol: .5,
+    }
+
+    box = renderer.create(<BeerBox data={boxData} />)
+  })
+
+  it('renders correctly', () => {
+    expect(box).toMatchSnapshot();
+  })
+})

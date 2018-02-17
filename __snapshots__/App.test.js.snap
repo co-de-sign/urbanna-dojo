@@ -4,7 +4,7 @@ exports[`App renders correctly 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#fff",
+      "backgroundColor": "#FFEE99",
       "flex": 1,
     }
   }
@@ -12,7 +12,7 @@ exports[`App renders correctly 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#000",
+        "backgroundColor": "#385B79",
         "paddingBottom": 10,
         "paddingHorizontal": 10,
         "paddingTop": 54,
@@ -33,6 +33,15 @@ exports[`App renders correctly 1`] = `
       Urbanna
     </Text>
   </View>
-  <View />
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "alignItems": "center",
+        "paddingBottom": 32,
+      }
+    }
+  >
+    <View />
+  </RCTScrollView>
 </View>
 `;

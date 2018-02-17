@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, StatusBar } from 'react-native'
 import { Constants } from 'expo'
 
+import colors from '../../helpers/colors'
+
 export default class Header extends Component {
   render() {
     return (
@@ -22,7 +24,7 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight + 10,
     paddingHorizontal: 10,
     paddingBottom: 10,
-    backgroundColor: '#000',
+    backgroundColor: colors.blue,
   },
   banner: {
     fontSize: 20,

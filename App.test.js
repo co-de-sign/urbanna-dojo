@@ -1,12 +1,12 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import React from 'react'
+import renderer from 'react-test-renderer'
 
 import MockAsyncStorage from './helpers/MockAsyncStorage'
 
 const mockStorage = new MockAsyncStorage()
 jest.setMock('AsyncStorage', mockStorage)
 
-import App from './App';
+import App from './App'
 
 describe('App', () => {
   let app

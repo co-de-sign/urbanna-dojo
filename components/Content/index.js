@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { ScrollView, Text, StyleSheet } from 'react-native'
 
+import BeerBox from '../BeerBox'
 import Beer from '../../models/Beer'
 
 export default class Content extends Component {
@@ -16,11 +17,18 @@ export default class Content extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView contentContainerStyle={styles.container}>
         {this.state.beers.map(beer => (
-          <Text key={beer.key}>{JSON.stringify(beer.name)}</Text>
+          <BeerBox key={beer.key} data={beer} />
         ))}
-      </View>
+      </ScrollView>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    paddingBottom: 32,
+  }
+})
