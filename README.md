@@ -14,5 +14,7 @@ Uma forma de filtrar os resultados
 
 ## Participantes
 - Yurick Hauschild
+- Dayanne Fernandes
+- Caê Penna
 
 Piloto, insira seu nome aqui!

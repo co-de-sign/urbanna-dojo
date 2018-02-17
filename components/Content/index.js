@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, StyleSheet } from 'react-native'
+import { ScrollView, View, Text, StyleSheet } from 'react-native'
+import BeerAPI from '../../models/Beer'
+import Beer from '../Beer'
 
 export default class Content extends Component {
+  state = {
+    beerList: []
+  }
+
+  async componentWillMount() {
+    const beers = await BeerAPI.all()
+    this.setState({
+      beerList: beers }
+    )
+  }
+
   render() {
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        <Text style={styles.content}>Aqui vai o nosso programa :)</Text>
+        { this.state.beerList.map(beer => <Beer key={beer.name} beer={beer}/>) }
       </ScrollView>
     )
   }
@@ -13,12 +26,10 @@ export default class Content extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     paddingBottom: 32,
   },
   content: {
     color: 'gray'
-  }
+  },
 })
