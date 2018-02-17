@@ -9,6 +9,7 @@ describe('BeerBox', () => {
   beforeEach(() => {
     const boxData = {
       name: 'Fake name',
+      type: ['fake', 'type'],
       alcohol: .5,
     }
 

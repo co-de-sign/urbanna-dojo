@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.blue,
   },
   banner: {
-    fontSize: 20,
-    color: '#fff'
+    fontSize: 24,
+    color: '#fff',
+    textAlign: 'center',
   }
 })

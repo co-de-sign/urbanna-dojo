@@ -26,7 +26,8 @@ exports[`App renders correctly 1`] = `
       style={
         Object {
           "color": "#fff",
-          "fontSize": 20,
+          "fontSize": 24,
+          "textAlign": "center",
         }
       }
     >

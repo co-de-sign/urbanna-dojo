@@ -7,7 +7,12 @@ export default class BeerBox extends Component {
 
     return (
       <View style={styles.box}>
-        <Text>{data.name}</Text>
+        <Text style={styles.title}>
+          {data.name}
+        </Text>
+        <Text>
+          {data.type.reduce((acc, type) => `${acc} ${type}`, '')}
+        </Text>
         <Text>{data.alcohol}% alcool</Text>
       </View>
     )
@@ -22,5 +27,9 @@ const styles = StyleSheet.create({
     width: 256,
     elevation: 1,
     backgroundColor: '#fff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
   }
 })

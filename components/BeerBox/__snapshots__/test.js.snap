@@ -17,8 +17,21 @@ exports[`BeerBox renders correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 24,
+        "fontWeight": "bold",
+      }
+    }
   >
     Fake name
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+     fake type
   </Text>
   <Text
     accessible={true}
